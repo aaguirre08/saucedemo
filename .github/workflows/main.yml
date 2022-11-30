@@ -8,16 +8,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v3 # use the explicit version number
+        
+      - name: Cypress.io
+        uses: cypress-io/github-action@v4.2.2
         with:
-          browser: chrome
-          build: npm run build:testing
-          start: npm run start:integration-test-server
           record: true
-        env:
-          CI: true
-          # pass the Dashboard record key as an environment variable
+          browser: chrome
+          start: npm cy:run
           CYPRESS_RECORD_KEY: 78658b9b-b396-4355-a37c-63796a8fc113
