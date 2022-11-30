@@ -11,8 +11,7 @@ describe('Login fallido', () => {
     const userInfo = [
         {
             user: 'locked_out_user',
-            password: 'secret_sauce',
-            error: 'Epic sadface: Sorry, this user has been locked out.'
+            password: 'secret_sauce'
         },
         {
             user: 'performance_glitch_user',
@@ -28,8 +27,7 @@ describe('Login fallido', () => {
         }
     ]
 
-    it.only('Contraseña incorrecta', () => {
-
+    it('Contraseña incorrecta', () => {
         userInfo.forEach(info => {
             login.typeUserName(info.user)
             login.typePass(info.password.split('').reverse().join(''))
@@ -42,7 +40,6 @@ describe('Login fallido', () => {
     });
 
     it('Usuario incorrecto', () => {
-
         userInfo.forEach(info => {
             login.typeUserName(info.user.split('').reverse().join(''))
             login.typePass(info.password)
@@ -55,7 +52,6 @@ describe('Login fallido', () => {
     });
 
     it('Contraseña y usuario incorrecto', () => {
-
         userInfo.forEach(info => {
             login.typeUserName(info.user.split('').reverse().join(''))
             login.typePass(info.password.split('').reverse().join(''))
@@ -65,5 +61,15 @@ describe('Login fallido', () => {
             login.userPassInput().clear()
             login.clickCloseError()
         });
+    });
+
+    it('Usuario bloqueado', () => {
+        login.typeUserName('locked_out_user')
+        login.typePass('secret_sauce')
+        login.clickLogin()
+        login.errorMessage().should('exist').and('have.text', 'Epic sadface: Sorry, this user has been locked out.')
+        login.userNameInput().clear()
+        login.userPassInput().clear()
+        login.clickCloseError()
     });
 });
