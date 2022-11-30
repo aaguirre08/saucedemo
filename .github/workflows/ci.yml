@@ -1,13 +1,13 @@
-name: Regresion Tests
+name: Cypress Tests
 
 on: [push]
 
 jobs:
   cypress-run:
-  runs-on: ubuntu-latest
-  steps:
-      name: Checkout
-      uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      name: Cypress run 🧪
-      uses: cypress-io/github-action@v2
+      - name: Cypress run 🧪
+        uses: cypress-io/github-action@v2
