@@ -3,7 +3,7 @@ name: Cypress Tests
 on: [push]
 
 jobs:
-  cypress-run:
+  regression-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,7 +15,7 @@ jobs:
           record: true
           browser: chrome
           start: npm run cy:run
-          working-directory: e2e
+          working-directory: /cypress/e2e
         env:
           CI: true
           CYPRESS_RECORD_KEY: 78658b9b-b396-4355-a37c-63796a8fc113
