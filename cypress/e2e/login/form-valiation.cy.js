@@ -71,7 +71,7 @@ context('Form validations', () => {
                 login.typePass(testCase.pass)
                 login.clickLogin()
                 login.userNameInput().should('have.css', 'border-bottom-color', 'rgb(226, 35, 26)')
-                login.userNameInput().should('have.css', 'border-bottom-color', 'rgb(226, 35, 26)')
+                login.userPassInput().should('have.css', 'border-bottom-color', 'rgb(226, 35, 26)')
             });
         });
 
