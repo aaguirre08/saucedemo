@@ -2,7 +2,7 @@
 
 import login from '../../pages/loginPage';
 
-describe('Login fallido', () => {
+describe('Unsuccessful login', () => {
 
     before(() => {
         cy.visit('/')
@@ -27,7 +27,7 @@ describe('Login fallido', () => {
         }
     ]
 
-    it('Contraseña incorrecta', () => {
+    it('Incorrect password', () => {
         userInfo.forEach(info => {
             login.typeUserName(info.user)
             login.typePass(info.password.split('').reverse().join(''))
@@ -39,7 +39,7 @@ describe('Login fallido', () => {
         });
     });
 
-    it('Usuario incorrecto', () => {
+    it('Incorrect user', () => {
         userInfo.forEach(info => {
             login.typeUserName(info.user.split('').reverse().join(''))
             login.typePass(info.password)
@@ -51,7 +51,7 @@ describe('Login fallido', () => {
         });
     });
 
-    it('Contraseña y usuario incorrecto', () => {
+    it('Incorrect password and user', () => {
         userInfo.forEach(info => {
             login.typeUserName(info.user.split('').reverse().join(''))
             login.typePass(info.password.split('').reverse().join(''))
@@ -63,7 +63,7 @@ describe('Login fallido', () => {
         });
     });
 
-    it('Usuario bloqueado', () => {
+    it('User blocked', () => {
         login.typeUserName('locked_out_user')
         login.typePass('secret_sauce')
         login.clickLogin()
