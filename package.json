@@ -10,6 +10,7 @@
   "author": "Angélica Aguirre",
   "license": "MIT",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "cypress": "^11.2.0"
-  } 
+  }
 }
