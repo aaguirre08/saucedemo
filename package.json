@@ -4,7 +4,7 @@
   "description": "E2E Test For Saucedemo",
   "main": "index.js",
   "scripts": {
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record",
     "cy:open": "npx cypress open"
   },
   "author": "Angélica Aguirre",
