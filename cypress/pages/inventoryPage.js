@@ -8,6 +8,7 @@ class InventoryPage extends basePage {
         super();
         this.leftMenu = () => cy.get('#react-burger-menu-btn')
         this.logOutOption = () => cy.get('#logout_sidebar_link')
+        this.carIcon = () => cy.get('.shopping_cart_link')
     }
 
     clickMenu(){
@@ -15,6 +16,9 @@ class InventoryPage extends basePage {
     }
     clickLogOut(){
         this.logOutOption().click()
+    }
+    clickCar(){
+        this.carIcon().click()
     }
 
 }

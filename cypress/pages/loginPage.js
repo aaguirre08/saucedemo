@@ -9,8 +9,6 @@ class LoginPage extends basePage {
         this.userNameInput = () => cy.get('#user-name')
         this.userPassInput = () => cy.get('#password')
         this.loginButton = () => cy.get('#login-button')
-        this.errorMessage = () => cy.get('h3')
-        this.closeErrorButton = () => cy.get('.error-button')
     }
 
     typeUserName(name){
@@ -21,9 +19,6 @@ class LoginPage extends basePage {
     }
     clickLogin(){
         this.loginButton().click()
-    }
-    clickCloseError(){
-        this.closeErrorButton().click()
     }
 
 }
