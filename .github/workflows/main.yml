@@ -3,18 +3,30 @@ name: Cypress Tests
 on: [push]
 
 jobs:
-  cypress-run:
+  cypress-suite:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
  
-      - name: Cypress.io
+      - name: Run Cypress e2e tests
         uses: cypress-io/github-action@v4.2.2
         with:
           record: true
           browser: chrome
-          start: npm run cy:run
+          start: npm run cy:run --record
         env:
           CI: true
           CYPRESS_RECORD_KEY: 78658b9b-b396-4355-a37c-63796a8fc113
+          
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v1
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload Cypress Videos
+        uses: actions/upload-artifact@v1
+        with:
+          name: cypress-videos
+          path: cypress/videos
