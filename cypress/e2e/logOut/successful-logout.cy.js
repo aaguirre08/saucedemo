@@ -29,6 +29,7 @@ describe('Successful logout', () => {
             login.typeUserName(testCase.user)
             login.typePass('secret_sauce')
             login.clickLogin()
+            cy.url({timeout:60000}).should('include', '/inventory')
             inventory.clickMenu()
             inventory.clickLogOut()
             cy.url().should('eq', Cypress.config().baseUrl + '/')
