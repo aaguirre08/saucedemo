@@ -33,7 +33,7 @@ describe('Successful login', () => {
             login.typeUserName(testCase.user)
             login.typePass('secret_sauce')
             login.clickLogin()
-            cy.url().should('include', '/inventory')
+            cy.url({timeout:60000}).should('include', '/inventory')
         });
     });
 });
