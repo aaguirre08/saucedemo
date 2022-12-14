@@ -6,8 +6,8 @@ class InventoryPage extends basePage {
 
     constructor() {
         super();
-        this.leftMenu = () => cy.get('#react-burger-menu-btn')
-        this.logOutOption = () => cy.get('#logout_sidebar_link')
+        this.leftMenu = () => cy.get('#react-burger-menu-btn', {timeout:6000})
+        this.logOutOption = () => cy.get('a', {timeout:6000}).contains('Logout')
         this.carIcon = () => cy.get('.shopping_cart_link')
     }
 
