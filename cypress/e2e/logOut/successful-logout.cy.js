@@ -3,7 +3,7 @@
 import login from '../../pages/loginPage';
 import inventory from '../../pages/inventoryPage';
 
-describe('Successful logout', () => {
+describe.skip('Successful logout', () => {
 
     before(() => {
         cy.visit('/')
