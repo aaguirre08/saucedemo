@@ -23,11 +23,6 @@ class InventoryPage extends basePage {
         this.removeFleeceJacketButton = () => cy.get('#remove-sauce-labs-fleece-jacket')
         this.removeOneSieButton = () => cy.get('#remove-sauce-labs-onesie')
         this.productNameLabel = () => cy.get('.inventory_item_name')
-        this.sortProductButton = () => cy.get('[data-test=product_sort_container]')
-        this.sortAzOption = () => cy.get('[value=az]')
-        this.sortZaOption = () => cy.get('value=za]')
-        this.sortLohiOption = () => cy.get('[value=lohi]')
-        this.sortHiloOption = () => cy.get('[value=hilo]')
         this.productCarNumber = () => cy.get('.shopping_cart_badge')
     }
 
@@ -79,20 +74,21 @@ class InventoryPage extends basePage {
     clickRemoveOneSie(){
         this.removeOneSieButton().click()
     }
-    clickSortProduct(){
-        this.sortProductButton().click()
-    }
     clickSortAz(){
-        this.sortAzOption().click()
+        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('select').select('az',{force: true})
     }
     clickSortZa(){
-        this.sortZaOption().click()
+        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('select').select('za',{force: true})
     }
     clickSortLohi(){
-        this.sortLohiOption().click()
+        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('select').select('lohi',{force: true})
     }
     clickSortHilo(){
-        this.sortHiloOption().click()
+        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('select').select('hilo',{force: true})
     }
 
 }
