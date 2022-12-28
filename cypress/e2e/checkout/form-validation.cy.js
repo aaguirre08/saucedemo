@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-//import faker from "@faker-js/faker/locale/es_MX"
 const { faker } = require ("@faker-js/faker/locale/es_MX")
 import checkout from '../../pages/checkoutPage'
 import inventory from '../../pages/inventoryPage'

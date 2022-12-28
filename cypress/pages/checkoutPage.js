@@ -10,6 +10,7 @@ class CheckoutPage extends basePage {
         this.lasNameInput = () => cy.get('#last-name')
         this.postalCodeInput = () => cy.get('#postal-code')
         this.checkoutButton = () => cy.get('#checkout')
+        this.finishCheckoutButton = () => cy.get('#finish')
     }
 
     typeName(name){
@@ -23,6 +24,9 @@ class CheckoutPage extends basePage {
     }
     clickCheckout(){
         this.checkoutButton().click()
+    }
+    clickFinishCheckoutButton(){
+        this.finishCheckoutButton().click()
     }
 
 }
