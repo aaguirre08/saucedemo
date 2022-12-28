@@ -22,6 +22,7 @@ class InventoryPage extends basePage {
         this.removeBoltShirtButton = () => cy.get(' #remove-sauce-labs-bolt-t-shirt')
         this.removeFleeceJacketButton = () => cy.get('#remove-sauce-labs-fleece-jacket')
         this.removeOneSieButton = () => cy.get('#remove-sauce-labs-onesie')
+        this.removeRedTShirtButton = () => cy.get('#remove-test\\.allthethings\\(\\)-t-shirt-\\(red\\)')
         this.productNameLabel = () => cy.get('.inventory_item_name')
         this.productCarNumber = () => cy.get('.shopping_cart_badge')
     }
