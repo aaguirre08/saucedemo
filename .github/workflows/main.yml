@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
  
       - name: Run Cypress e2e tests
-        uses: cypress-io/github-action@v4.2.2
+        uses: cypress-io/github-action@v5.0.2
         with:
           record: true
           browser: chrome
