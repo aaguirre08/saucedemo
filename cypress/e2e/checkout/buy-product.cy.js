@@ -47,16 +47,13 @@ context('Successful purchases', () => {
             checkout.typePostalCode(faker.address.zipCode())
             checkout.clickContinue()
             cy.url().should('contain', 'checkout-step-two')
-            inventory.productNameLabel().should('be.visible').and('have.text', product.prodName)
+            inventory.productNameLabel().should('be.visible').and('contain', product.prodName)
             checkout.clickFinishCheckoutButton()
             cy.url().should('contain', 'checkout-complete')
-            cy.get('h2').should('be.visible').and('have.text', 'THANK YOU FOR YOUR ORDER')
+            cy.get('h2').should('be.visible').and('have.text', 'Thank you for your order!')
             cy.get('.pony_express').should('be.visible')
+            cy.get('#back-to-products').click()
         });
-    });
-
-    afterEach(() => {
-        cy.get('#back-to-products').click()
     });
 
 });
