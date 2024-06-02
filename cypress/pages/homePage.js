@@ -11,7 +11,7 @@ class HomePage extends basePage {
     }
 
     clickSortHilo() {
-        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('.product_sort_container').trigger('click')
         cy.get('select').select('hilo', { force: true })
     }
 

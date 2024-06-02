@@ -76,19 +76,19 @@ class InventoryPage extends basePage {
         this.removeOneSieButton().click()
     }
     clickSortAz(){
-        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('.product_sort_container').trigger('click')
         cy.get('select').select('az',{force: true})
     }
     clickSortZa(){
-        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('.product_sort_container').trigger('click')
         cy.get('select').select('za',{force: true})
     }
     clickSortLohi(){
-        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('.product_sort_container').trigger('click')
         cy.get('select').select('lohi',{force: true})
     }
     clickSortHilo(){
-        cy.get('[data-test=product_sort_container]').trigger('click')
+        cy.get('.product_sort_container').trigger('click')
         cy.get('select').select('hilo',{force: true})
     }
 
