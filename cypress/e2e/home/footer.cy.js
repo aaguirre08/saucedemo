@@ -27,12 +27,8 @@ describe('Verify footer structure', () => {
     });
 
     it('The user is able to see the copy', () => {
-        home.footerCopy().should('be.visible').and('have.text', '© 2023 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy')
+        home.footerCopy().should('be.visible').and('have.text', '© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy')
 
     });
 
-    it('Click on social media icons: ' + social.social_name, () => {
-        });
-
-    });
 });
